@@ -163,8 +163,8 @@ pub fn find_path(
                     position: p,
                     g: smallest_node.g + 1,
                 })
-            });
-        // .filter(|n| n.f() < shortest_known);
+            })
+            .filter(|n| n.f() < shortest_known);
 
         for neighbor in neighbors {
             if closed_list.contains(&neighbor) {
